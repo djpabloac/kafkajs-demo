@@ -1,13 +1,13 @@
 require('dotenv').config();
 const express = require('express');
-const OrderRouter = require('./routers');
+const ResourceRouter = require('./routers');
 
 const app = express();
 
 app.use(express.json());
-app.use('/v1/order', OrderRouter);
+app.use('/v1/resource', ResourceRouter);
 
-const port = process.env.PORT_ORDER || 3002;
+const port = process.env.PORT_RESOURCE || 3002;
 
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);
